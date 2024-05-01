@@ -115,7 +115,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -137,6 +137,99 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://delightflow.github.io/2024/05/01/5-post/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Delightflow">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="변리사의 AI 서비스  개발 이야기">
+      <meta itemprop="description" content="발명 아이디어만 입력하면 특허출원을 하는 서비스를 만들거에요.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 변리사의 AI 서비스  개발 이야기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/05/01/5-post/" class="post-title-link" itemprop="url">Python EDA 정리</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-05-01 18:18:42 / Modified: 18:39:45" itemprop="dateCreated datePublished" datetime="2024-05-01T18:18:42+09:00">2024-05-01</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="python-EDA"><a href="#python-EDA" class="headerlink" title="python EDA?"></a>python EDA?</h2><p>python 을 이용한 탐색적 데이터 분석이다.</p>
+<h2 id="python-EDA를-위해-필요한-역량"><a href="#python-EDA를-위해-필요한-역량" class="headerlink" title="python EDA를 위해 필요한 역량"></a>python EDA를 위해 필요한 역량</h2><ol>
+<li>python, 라이브러리(numpy, pandas)</li>
+<li>통계학</li>
+<li>시각화 라이브러리(Seaborn)</li>
+</ol>
+<h3 id="중요-포인트-정리"><a href="#중요-포인트-정리" class="headerlink" title="중요 포인트 정리"></a>중요 포인트 정리</h3><h2 id="numpy-broadcast"><a href="#numpy-broadcast" class="headerlink" title="numpy broadcast"></a>numpy broadcast</h2><p> (3, ) + (2, 3) &#x3D; (2, 3) # broadcasting 발생 마지막 차원 같아서 더해짐<br> (5, ) + (3, 4, 5) &#x3D; (3, 4, 5) # broadcasting 발생 마지막 차원 같아서 더해짐<br> (3, 4) + (5, 3, 4) &#x3D; (5, 3, 4) # broadcasting 발생 마지막 차원 같아서 더해짐</p>
+<h2 id="titanic-data-pandas-로-분석"><a href="#titanic-data-pandas-로-분석" class="headerlink" title="titanic data pandas 로 분석"></a>titanic data pandas 로 분석</h2><h4 id="Q1-여성-승객들의-평균-나이를-계산해보세요"><a href="#Q1-여성-승객들의-평균-나이를-계산해보세요" class="headerlink" title="Q1. 여성 승객들의 평균 나이를 계산해보세요."></a>Q1. 여성 승객들의 평균 나이를 계산해보세요.</h4><p>#np.mean(titanic.loc[titanic.Sex &#x3D;&#x3D; ‘female’, ‘Age’])<br>titanic.loc[titanic.Sex &#x3D;&#x3D; ‘female’, ‘Age’].mean()</p>
+<h4 id="Q2-1등석에-탑승한-승객-중-최대-요금을-낸-사람의-이름을-찾아주세요"><a href="#Q2-1등석에-탑승한-승객-중-최대-요금을-낸-사람의-이름을-찾아주세요" class="headerlink" title="Q2. 1등석에 탑승한 승객 중 최대 요금을 낸 사람의 이름을 찾아주세요."></a>Q2. 1등석에 탑승한 승객 중 최대 요금을 낸 사람의 이름을 찾아주세요.</h4><p>temp &#x3D; titanic.loc[titanic.Pclass &#x3D;&#x3D; 1, [‘Name’, ‘Fare’]]<br>temp.loc[temp.Fare &#x3D;&#x3D; temp.Fare.max(), “Name”]</p>
+<h4 id="Q3-1등석에-탑승한-승객-중-승선한-곳이-Queenstown인-사람들의-수는"><a href="#Q3-1등석에-탑승한-승객-중-승선한-곳이-Queenstown인-사람들의-수는" class="headerlink" title="Q3. 1등석에 탑승한 승객 중 승선한 곳이 Queenstown인 사람들의 수는?"></a>Q3. 1등석에 탑승한 승객 중 승선한 곳이 Queenstown인 사람들의 수는?</h4><p>#temp2 &#x3D; titanic[titanic.Pclass &#x3D;&#x3D; 1]<br>#temp2[temp2.Embarked &#x3D;&#x3D; ‘Q’]<br>##mask &amp; mask : 두 조건을 둘 다 만족하는 mask.   (AND)<br>##mask | mask : 두 조건중 하나 이상 만족하는 mask. (OR)<br>##~mask : 조건을 반전. (NOT)<br>titanic[(titanic.Pclass &#x3D;&#x3D; 1) &amp; (titanic.Embarked &#x3D;&#x3D; ‘Q’)].shape[0]</p>
+<h4 id="Q4-승선한-곳이-“S”인-사람들의-생존자-수는"><a href="#Q4-승선한-곳이-“S”인-사람들의-생존자-수는" class="headerlink" title="Q4. 승선한 곳이 “S”인 사람들의 생존자 수는?"></a>Q4. 승선한 곳이 “S”인 사람들의 생존자 수는?</h4><p>titanic.loc[titanic.Embarked.isin([‘S’]), ‘Survived’].sum()</p>
+<h4 id="Q5-미혼-여성중에-나이를-모르는-사람의-수는"><a href="#Q5-미혼-여성중에-나이를-모르는-사람의-수는" class="headerlink" title="Q5. 미혼 여성중에 나이를 모르는 사람의 수는?"></a>Q5. 미혼 여성중에 나이를 모르는 사람의 수는?</h4><p>titanic.loc[titanic.Name.str.contains(‘Miss.’), ‘Age’].isnull()#.sum()</p>
+<h2 id="instacart-data로-market-basket-분석"><a href="#instacart-data로-market-basket-분석" class="headerlink" title="instacart data로 market-basket 분석"></a>instacart data로 market-basket 분석</h2><h4 id="재구매율의-함정"><a href="#재구매율의-함정" class="headerlink" title="재구매율의 함정"></a>재구매율의 함정</h4><p>reorder rate 1.0은 데이터 셋 자체의 기간 설정이 전체가 아닐 것이므로 의미가 무색할 수 있다.<br>reorder rate 1.0을 제외하고 본다.<br>reorder rate 중에서 reorder가 소량인 경우에도 의미가 없는 rate일 수 dlTek.<br>reorder rate 중 reorder 100 개 이상으로 좁혀보자.</p>
+<p>이 코드는 주문 데이터를 분석하여 다음을 수행합니다:</p>
+<ol>
+<li>가장 많이 주문된 제품을 찾습니다.</li>
+<li>각 제품의 재주문률을 계산합니다.</li>
+<li>재주문률이 1보다 작은 제품만 필터링합니다.</li>
+<li>재주문 수가 100개 이상인 제품만 필터링합니다.</li>
+<li>피벗 테이블을 사용하여 각 제품의 재주문 수, 평균 재주문률, 주문 수를 계산합니다.</li>
+</ol>
+<p>먼저, <code>pd.merge</code>를 사용하여 ‘product_name’을 기준으로 데이터프레임을 결합합니다. 그런 다음, ‘reordered’ 열과 ‘order_id’ 열을 사용하여 재주문률을 계산합니다. 이후, 재주문률이 1보다 작은 제품과 재주문 수가 100개 이상인 제품을 필터링합니다.</p>
+<p>마지막으로, <code>pd.pivot_table</code>을 사용하여 각 제품의 재주문 수, 평균 재주문률, 주문 수를 계산합니다. 이 피벗 테이블은 ‘product_name’을 인덱스로 사용하고, ‘reordered’ 열에 대해 ‘sum’, ‘mean’, ‘count’ 함수를 적용합니다. 그런 다음, ‘sum’ 결과에 따라 행을 정렬합니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">temp = pd.merge(order_product_name_most_ordered, order_products_reorder_num_max, on=&#x27;product_name&#x27;, how=&#x27;left&#x27;)</span><br><span class="line">temp[&#x27;reordered_rate&#x27;] = temp[&#x27;reordered&#x27;] / temp[&#x27;order_id&#x27;]</span><br><span class="line">temp = temp.sort_values(by=&#x27;reordered_rate&#x27;, ascending=False)</span><br><span class="line">temp.head(10)</span><br><span class="line">#reorder rate 1.0 제외하려면?</span><br><span class="line">temp = temp.loc[temp.reordered_rate &lt; 1]</span><br><span class="line">temp.head(10)</span><br><span class="line">#reorder rate 중에서 redoer가 100개 이상인 것만 보고 싶다면?</span><br><span class="line">temp = temp.loc[temp.reordered &gt; 100]</span><br><span class="line">temp.head(10)</span><br><span class="line"></span><br><span class="line">#pivot table 사용, 재구매율 함정</span><br><span class="line">order_data=pd.merge(orders, train, on=&#x27;order_id&#x27;, how=&#x27;left&#x27;)</span><br><span class="line">order_data=pd.merge(order_data, products, on=&#x27;product_id&#x27;, how=&#x27;left&#x27;)</span><br><span class="line">data = pd.merge(train, products, on=&#x27;product_id&#x27;, how=&#x27;inner&#x27;)</span><br><span class="line"></span><br><span class="line">pd.pivot_table(data = data, index=&#x27;product_name&#x27;, values=&#x27;reordered&#x27;, aggfunc=[&#x27;sum&#x27;,&#x27;mean&#x27;,&#x27;count&#x27;]).sort_values(by=(&#x27;sum&#x27;,&#x27;reordered&#x27;), ascending=False)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
