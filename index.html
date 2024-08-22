@@ -115,7 +115,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -137,6 +137,95 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://delightflow.github.io/2024/08/22/DL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Delightflow">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="변리사의 AI 서비스  개발 이야기">
+      <meta itemprop="description" content="발명 아이디어만 입력하면 특허출원을 하는 서비스를 만들거에요.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 변리사의 AI 서비스  개발 이야기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/08/22/DL/" class="post-title-link" itemprop="url">DL 대회 후기</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-08-22 12:24:27 / Modified: 12:32:55" itemprop="dateCreated datePublished" datetime="2024-08-22T12:24:27+09:00">2024-08-22</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="개인-회고-작성"><a href="#개인-회고-작성" class="headerlink" title="개인 회고 작성"></a><strong>개인 회고 작성</strong></h3><ul>
+<li><strong>소개:</strong></li>
+</ul>
+<p>이번 문서 분류 경진대회에서는 처음으로 팀원으로 참여하며 이전과는 다른 경험을 했습니다. 비록 우수한 팀장의 역량에 비해 제 실력은 부족했지만, 빠른 학습을 통해 팀에 기여할 수 있었습니다.</p>
+<p><strong>내 학습 목표를 달성하기 위해 무엇을 어떻게 했는가?</strong></p>
+<p>이번 대회에서 저는 개인적인 학습 목표와 팀의 목표를 달성하기 위해 다음과 같은 노력을 기울였습니다:</p>
+<ul>
+<li><strong>개인 학습 측면</strong>: 강의 수강 기간을 절반으로 단축하여 빠르게 강의를 마친 후, 대회에 집중할 수 있도록 했습니다. 또한, 서버 인스턴스에서 GPU를 활용하여 모델 학습을 빠르게 진행할 수 있도록 환경 설정에 만전을 기했습니다. 단순히 생성 AI에 의존하지 않고 목표를 명확히 인지하며, 최적의 의사결정을 통해 파라미터를 조정했습니다.</li>
+<li><strong>공동 학습 측면</strong>: 아이디어 실행을 신중하게 검토하여, 불필요한 리소스 낭비를 최소화하면서 팀에 효과적으로 기여할 수 있도록 노력했습니다.</li>
+</ul>
+<p><strong>전과 비교해 내가 시도한 새로운 변화와 그 효과는 무엇이었는가?</strong></p>
+<p>이번에는 무작위로 팀이 구성되는 대신, 이전 대회에서 실력을 확인한 팀원들과 함께 별도의 팀을 구성했습니다. 우수한 실력의 팀장을 중심으로 역할을 부여받고, 요구사항에 적극적으로 응대하며 프로젝트를 수행했습니다. 그 결과, 이전 대회에 비해 부담이 줄었고, 학습 과정도 더욱 즐거웠으며 성적도 향상되었습니다. 그러나 전반적으로 이전 프로젝트에 비해 제 기여 비중이 줄었고, 팀장의 부담을 덜어주는 데 충분하지 못해 아쉬움이 남습니다.</p>
+<p><strong>마주한 한계와 아쉬웠던 점은 무엇인가?</strong></p>
+<p>테스트셋이 학습셋과 달리 회전, 플립, 노이즈 등으로 변형된 것을 복원하는 역할을 맡았습니다. 모델이 학습하는 데이터가 변형되더라도 테스트셋이 정돈되면 분류 성능이 더 높아질 것이라는 가정 하에 작업을 진행했습니다. 처음에는 공개된 레포지토리에서 가져온 이미지 회전 코드를 사용해 학습셋을 임의로 회전시키고 이를 바탕으로 테스트셋을 보정했지만, 결과가 기대에 미치지 못했습니다. 이후 프로젝트의 분류모델을 활용하여 회전을 위한 회귀모델을 만들었으나, 손실 함수 문제로 인해 버그가 해결되지 않았습니다. 최종적으로는 90도씩 회전시키고, 플립 처리한 후, OCR 또는 GPT-4를 이용해 글자를 인식하는 룰 베이스 알고리즘을 시도했지만, API 호출 처리 비용과 시간 소요로 인해 포기할 수밖에 없었습니다.</p>
+<p>이후, 분류 모델의 성능 개선을 위해 파라미터를 조정하고, 멘토링을 통해 알게 된 Docscanner 모델을 활용해 분류가 어려운 클래스를 처리한 뒤 다시 인퍼런스를 진행했습니다. 그 결과 성능이 약간(0.02) 상승했지만, 전반적으로 결과가 기대에 미치지 못했습니다. 이 과정에서 손실 함수를 정하거나 모델 레이어를 추가 및 변경하는 등의 기술적 구현력이 부족함을 느꼈습니다.</p>
+<p><strong>한계와 교훈을 바탕으로 다음 경진대회에서 시도해보고 싶은 점은 무엇인가?</strong></p>
+<p>이번 대회에서 팀장으로서의 부담을 덜 수 있었습니다. 앞으로도 팀장보다는 팀원으로서 더 충실하게 역할을 수행하고자 합니다. 여러 시도를 하면서 충분히 소화하지 못했다는 점이 아쉬웠습니다. 다음 대회에서는 한 번의 시도라도 충분히 인내하며 최선의 결과를 내기 위해 노력할 것입니다.</p>
+<p><strong>협업 과정에서 잘된 점과 아쉬웠던 점은 무엇인가?</strong></p>
+<p>팀장이 모델링 코드를 대부분 작성해 모듈화 및 자동화가 잘 이루어졌으며, 실험 환경이 용이하게 조성되었습니다. 이를 기반으로 파라미터를 조정하고 데이터를 가공하여 반영하는 과정이 수월했습니다. 전반적으로 모델 구현 과정을 간접적으로 살필 수 있어 흥미로웠습니다.</p>
+<p>하지만 이 과정에서 큰 실력 차이를 느꼈고, 제 기여가 부족하다는 점에서 아쉬움이 남았습니다. 이러한 점을 기억하고, 다음 과정에서는 충분한 실력을 갖추어 팀의 기대에 부응하도록 하겠습니다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
