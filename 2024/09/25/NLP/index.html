@@ -19,27 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"delightflow.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="업스테이지 AI부트캠프오영석강사(실시간), 김현진 강사(온라인)내가 헷갈리는 것만 정리함 기술통계변수는 데이터로 구성, 데이터는 연구 목적에 맞는 변수 토대로 표본으로부터 수집한 자료임 모수는 모집단 특징 나타내는 수치로 모평균, 모분산, 모표준편차 등통계량은 표분 특징 나타내는 수치로 표본평균, 표본분산, 표본표준편차 등 표본 개수에서 1을 빼서 분산을">
+    <meta name="description" content="대회 진행 내용 히스토리베이스라인 시도 베이스라인: 41.7 하이퍼파라미터 변경: topk ngram 모델 변경: gogamza&#x2F;kobart-summarization -&gt; 41.8  LLM 실험 Claude haiku3 solar: GPT 4o mini 요약 프롬프트 -&gt; 20~31점 GPT4o mini: 영문 번역 후 영문 요약 후 한글 번역">
 <meta property="og:type" content="article">
-<meta property="og:title" content="인공지능을 위한 통계학 기본">
-<meta property="og:url" content="https://delightflow.github.io/2024/04/26/statisticsstudy/index.html">
+<meta property="og:title" content="NLP 학습과 대회 후기">
+<meta property="og:url" content="https://delightflow.github.io/2024/09/25/NLP/index.html">
 <meta property="og:site_name" content="변리사의 AI 서비스  개발 이야기">
-<meta property="og:description" content="업스테이지 AI부트캠프오영석강사(실시간), 김현진 강사(온라인)내가 헷갈리는 것만 정리함 기술통계변수는 데이터로 구성, 데이터는 연구 목적에 맞는 변수 토대로 표본으로부터 수집한 자료임 모수는 모집단 특징 나타내는 수치로 모평균, 모분산, 모표준편차 등통계량은 표분 특징 나타내는 수치로 표본평균, 표본분산, 표본표준편차 등 표본 개수에서 1을 빼서 분산을">
+<meta property="og:description" content="대회 진행 내용 히스토리베이스라인 시도 베이스라인: 41.7 하이퍼파라미터 변경: topk ngram 모델 변경: gogamza&#x2F;kobart-summarization -&gt; 41.8  LLM 실험 Claude haiku3 solar: GPT 4o mini 요약 프롬프트 -&gt; 20~31점 GPT4o mini: 영문 번역 후 영문 요약 후 한글 번역">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-04-26T01:48:53.000Z">
-<meta property="article:modified_time" content="2024-04-26T03:08:41.286Z">
+<meta property="article:published_time" content="2024-09-25T04:31:25.000Z">
+<meta property="article:modified_time" content="2024-09-25T04:35:52.150Z">
 <meta property="article:author" content="Delightflow">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://delightflow.github.io/2024/04/26/statisticsstudy/">
+<link rel="canonical" href="https://delightflow.github.io/2024/09/25/NLP/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://delightflow.github.io/2024/04/26/statisticsstudy/","path":"2024/04/26/statisticsstudy/","title":"인공지능을 위한 통계학 기본"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://delightflow.github.io/2024/09/25/NLP/","path":"2024/09/25/NLP/","title":"NLP 학습과 대회 후기"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>인공지능을 위한 통계학 기본 | 변리사의 AI 서비스  개발 이야기</title>
+<title>NLP 학습과 대회 후기 | 변리사의 AI 서비스  개발 이야기</title>
   
 
 
@@ -105,7 +105,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EA%B8%B0%EC%88%A0%ED%86%B5%EA%B3%84"><span class="nav-number">1.</span> <span class="nav-text">기술통계</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EC%B6%94%EB%A6%AC%ED%86%B5%EA%B3%84"><span class="nav-number">2.</span> <span class="nav-text">추리통계</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%ED%9A%8C%EA%B7%80-%EB%B6%84%EB%A5%98"><span class="nav-number">3.</span> <span class="nav-text">회귀 분류</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%8C%80%ED%9A%8C-%EC%A7%84%ED%96%89-%EB%82%B4%EC%9A%A9-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC"><span class="nav-number">1.</span> <span class="nav-text">대회 진행 내용 히스토리</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%9D%BC%EC%9D%B8-%EC%8B%9C%EB%8F%84"><span class="nav-number">1.1.</span> <span class="nav-text">베이스라인 시도</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LLM-%EC%8B%A4%ED%97%98"><span class="nav-number">1.2.</span> <span class="nav-text">LLM 실험</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T5-%EB%AA%A8%EB%8D%B8-%EC%8B%A4%ED%97%98"><span class="nav-number">1.3.</span> <span class="nav-text">T5 모델 실험</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LLM-%EC%B6%94%EA%B0%80-%EC%8B%9C%EB%8F%84"><span class="nav-number">1.4.</span> <span class="nav-text">LLM 추가 시도</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B5%9C%EC%A2%85-%EA%B2%B0%EA%B3%BC"><span class="nav-number">1.5.</span> <span class="nav-text">최종 결과</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%8B%9C%EC%82%AC%EC%A0%90"><span class="nav-number">1.6.</span> <span class="nav-text">시사점</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -150,7 +150,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://delightflow.github.io/2024/04/26/statisticsstudy/">
+    <link itemprop="mainEntityOfPage" href="https://delightflow.github.io/2024/09/25/NLP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -163,12 +163,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="인공지능을 위한 통계학 기본 | 변리사의 AI 서비스  개발 이야기">
+      <meta itemprop="name" content="NLP 학습과 대회 후기 | 변리사의 AI 서비스  개발 이야기">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          인공지능을 위한 통계학 기본
+          NLP 학습과 대회 후기
         </h1>
 
         <div class="post-meta-container">
@@ -180,7 +180,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-04-26 10:48:53 / Modified: 12:08:41" itemprop="dateCreated datePublished" datetime="2024-04-26T10:48:53+09:00">2024-04-26</time>
+      <time title="Created: 2024-09-25 13:31:25 / Modified: 13:35:52" itemprop="dateCreated datePublished" datetime="2024-09-25T13:31:25+09:00">2024-09-25</time>
     </span>
 
   
@@ -192,25 +192,40 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>업스테이지 AI부트캠프<br>오영석강사(실시간), 김현진 강사(온라인)<br>내가 헷갈리는 것만 정리함</p>
-<h3 id="기술통계"><a href="#기술통계" class="headerlink" title="기술통계"></a>기술통계</h3><p>변수는 데이터로 구성, 데이터는 연구 목적에 맞는 변수 토대로 표본으로부터 수집한 자료임</p>
-<p>모수는 모집단 특징 나타내는 수치로 모평균, 모분산, 모표준편차 등<br>통계량은 표분 특징 나타내는 수치로 표본평균, 표본분산, 표본표준편차 등</p>
-<p>표본 개수에서 1을 빼서 분산을 구함</p>
-<ul>
-<li>왜냐면 표본은 표본 평균을 알고 있으므로 변수 중 어느 하나는 무조건 고정된다. 즉 자유가 상실(free)되었다.</li>
+    <div class="post-body" itemprop="articleBody"><h1 id="대회-진행-내용-히스토리"><a href="#대회-진행-내용-히스토리" class="headerlink" title="대회 진행 내용 히스토리"></a>대회 진행 내용 히스토리</h1><h2 id="베이스라인-시도"><a href="#베이스라인-시도" class="headerlink" title="베이스라인 시도"></a>베이스라인 시도</h2><ul>
+<li><strong>베이스라인:</strong> 41.7</li>
+<li><strong>하이퍼파라미터 변경:</strong> topk ngram</li>
+<li><strong>모델 변경:</strong> <code>gogamza/kobart-summarization</code> -&gt; 41.8</li>
 </ul>
-<p>사분위수 범위는 3사분위수-1사분위수 IQR<br>Maximum Q3+1.5xIQR<br>평균매출액은 연 변화량을 기하평균한다.<br>n</p>
-<p>중심극한정리는 표본의 수가 충분히 많을때 표본평균의 확률분포는 모수의 확률분포 모양과 무관하게 정규분포를 따른다.<br>(표본평균은 매번 달라지고 추출을 반복했을때의 표본평균들이 이루는 분포임)<br>이를 통해서 모집단 분포와 무관하게 표본 평균의 분포가 정규분포로 수렴하므로 추정이 가능해짐</p>
-<h3 id="추리통계"><a href="#추리통계" class="headerlink" title="추리통계"></a>추리통계</h3><p>바람직한 점추정량의 조건은 평균제곱오차가 최소, 일치성, 불편성, 유효성, 충분성<br>표준오차는 표본평균의 표준편차로 표본이 모평균으로부터 얼마나 떨어져있는지 나타냄</p>
-<p>검정에서 가설검정, 동등성 검정은 귀무가설에 차이가 있음 전통 가설검정은 귀무가설을 차이가 없다라고 정하나 동등성 검정은 차이가 있다라고 정함<br>유의수준은 보통 0.05(‘별하나’, 0.01(‘별둘’)을 사용함P-value인 유의확률이 유의수준보다 낮아야 대립가설을 채택함</p>
-<p>가설검정은 가설 수립-&gt;유의수준 결정-&gt;기각역 설정-&gt;통계량 계산-&gt;의사결정 순서임</p>
-<p>t-test는 모분산 모르고 표본 수 적고 등분산 이룰때  씀,  표본 평균 비교해서 모집단 평균 비교한다(두종속표본, 독립표본 t검정)<br>독립표본 t검정에서는 등분산성 검정 후 t검정 , 대립가설 : 두모집단 평균 차이가 있다.를 검정함<br>등분산성 검정, t-test 진행</p>
-<p>X2-test는 독립성 검정, 적합성 검정, 두 집단 분포가 같은지 동일성 검정</p>
-<p>ANOVA(f-분포)는 분산을 비교해서 평균 차이를 검정함 3개 이상 집단에 대한 평균 차이를 검정<br>순서 : 정규성 검정, 등분산성 검정, ANOVA, 사후검정 순서로 진행<br>분산분석의 귀무가설은 전체집단의 평균에 차이가 없다임, 대립가설 채택시 사후검정을 통해 어느 집단 간 차이가 있는지 확인</p>
-<h3 id="회귀-분류"><a href="#회귀-분류" class="headerlink" title="회귀 분류"></a>회귀 분류</h3><p>다중선형회귀<br>데이터 시각화를 통해 상관관계 확인, 선형회귀를 위한 정규화, 테스트 데이터 분리, VIF  다중공선성, R-squared, F-statistic 확인, 테스트데이터 예측데이터 비교해서 RMSE구함, R-squared 높이고, Prob 낮추고, Cond. No. 낮추고, RMSE 낮추는 것을 목표로 계수요인 넣고 빼는 과정진행</p>
-<p>이진 분류<br>데이터-&gt;선형화-&gt;분류(시그모이드)-&gt;판단</p>
-<p>Binary Cross Entropy 유도를 위한 최대가능도 추정 </p>
-<p>최대가능도(우도)추정은 관찰치를 가장 잘 설명해줄 수 있는 추정치를 가능성이 높은 모수의 추정량으로 택하는 방법(김응환, 이석훈, 2009, p. 270)<br>로그가능도함수를 편미분해서 그 값이 0이 되도록 하는 세타 찾을 수 있다.<br>정</p>
+<h2 id="LLM-실험"><a href="#LLM-실험" class="headerlink" title="LLM 실험"></a>LLM 실험</h2><ul>
+<li><strong>Claude haiku3 solar:</strong> GPT 4o mini 요약 프롬프트 -&gt; 20~31점</li>
+<li><strong>GPT4o mini:</strong> 영문 번역 후 영문 요약 후 한글 번역 -&gt; 33점</li>
+<li><strong>GPT4o mini 파인튜닝:</strong> 100개 dev 데이터로 진행 -&gt; 40점</li>
+</ul>
+<h2 id="T5-모델-실험"><a href="#T5-모델-실험" class="headerlink" title="T5 모델 실험"></a>T5 모델 실험</h2><ul>
+<li><strong>모델:</strong> <code>lcw99/t5-large-korean-text-summary</code></li>
+<li><strong>Encoder max len:</strong> 1000, <strong>Decoder max len:</strong> 200</li>
+<li><strong>결과:</strong> 43.92 (ngram, beam, max_len 등 변경 후 개선 없음)</li>
+</ul>
+<h2 id="LLM-추가-시도"><a href="#LLM-추가-시도" class="headerlink" title="LLM 추가 시도"></a>LLM 추가 시도</h2><ul>
+<li><strong>GPT4o mini 파인튜닝:</strong> 100개 영문 번역 후 영문 요약 후 한글 번역 (한글 대화 원본 제공) -&gt; 40점 </li>
+<li><strong>temp 0.1:</strong> 42점</li>
+<li><strong>200개 데이터로 파인튜닝:</strong> 점수 -&gt; 43.93 (T5 모델 결과 약간 초과)</li>
+</ul>
+<h2 id="최종-결과"><a href="#최종-결과" class="headerlink" title="최종 결과"></a>최종 결과</h2><ul>
+<li><strong>LLM GPT4o mini 파인튜닝:</strong> 100개 dev 데이터 모델 temp 0.1 시도 -&gt; 44.4014</li>
+<li><strong>결과:</strong> 너무 좋게 나옴</li>
+<li><strong>한영 영한 번역 필요 없이 바로 진행:</strong> train 데이터 2000개로 파인튜닝 -&gt; temp 0.1 -&gt; 44.6 종료</li>
+</ul>
+<h2 id="시사점"><a href="#시사점" class="headerlink" title="시사점"></a>시사점</h2><ul>
+<li>T5 large 변경에도 불구하고 생성물에 차이가 거의 없었다는 것이 특징.</li>
+<li>LLM이 입력과 출력 사이 요약 특징을 파인튜닝을 통해 학습한 것으로 파악됨.</li>
+<li>temp를 낮추자 창의성이 줄어들고 학습된 스타일대로 출력하는 빈도가 증가하여 결과가 급격히 좋아짐.</li>
+<li>영한, 한영 모델의 경우 한글 대화 원본을 제공하여 번역 코퍼스로 활용하였고 점수 개선. 그러나 영한 번역된 대화를 영문 요약하는 과정에서 유실된 내용이 크게 존재함.</li>
+<li>파인튜닝의 학습 데이터 숫자는 OpenAI의 Docs에 따르면 100개 정도가 적합하나, 이번 과제는 학습 데이터 200, 400, 2000으로 늘릴수록 점수 향상.</li>
+<li>T5 모델 학습은 20시간 소요, LLM 파인튜닝은 20분 미만.</li>
+<li>GPT4o 모델을 사용하거나 파인튜닝 데이터를 선별해서 제공하는 추가 진행은 가능하나, 결과 차이는 비용, 시간 고려 시 불필요하다고 판단.</li>
+</ul>
 
     </div>
 
@@ -224,14 +239,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/04/26/gitstudy/" rel="prev" title="Git, Git bash, Github">
-                  <i class="fa fa-angle-left"></i> Git, Git bash, Github
+                <a href="/2024/08/22/DL/" rel="prev" title="DL 대회 후기">
+                  <i class="fa fa-angle-left"></i> DL 대회 후기
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/05/01/5-post/" rel="next" title="Python EDA 정리">
-                  Python EDA 정리 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
