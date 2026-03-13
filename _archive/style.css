@@ -1,0 +1,79 @@
+/* 전역 스타일 */
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* 헤더 스타일 */
+header {
+  background: #333;
+  color: #fff;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: #0779e4 3px solid;
+}
+
+header h1 {
+  margin: 0;
+  margin-left: 20px;
+}
+
+/* 내비게이션 메뉴 스타일 */
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: #333;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: white;
+  padding: 15px 20px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #555;
+}
+
+/* 메인 콘텐츠 영역 스타일 */
+main {
+  padding: 20px;
+}
+
+article {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* 글 제목 스타일 */
+article h2 a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* 푸터 스타일 */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+  margin-top: 20px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 600px) {
+  nav ul li {
+      display: block;
+  }
+}
