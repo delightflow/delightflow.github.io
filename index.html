@@ -10,6 +10,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://delightflow.github.io/" />
   <link rel="stylesheet" href="style.css" />
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
   <header class="site-header">
@@ -21,7 +22,7 @@
       <nav class="nav">
         <a href="#about">회사소개</a>
         <a href="#business">사업영역</a>
-        <a href="#products">제품</a>
+        <a href="/work/">프로덕트</a>
         <a href="#contact">문의</a>
       </nav>
     </div>
@@ -43,18 +44,21 @@
       </div>
       <div class="container hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow">Delightflow Inc.</p>
-          <h1>AI를 활용해<br />지식재산과 사업 실행의 마찰을 줄입니다.</h1>
-          <p class="hero-text">
+          <p class="eyebrow reveal" data-reveal-order="0">Delightflow Inc.</p>
+          <h1>
+            <span class="reveal hero-line" data-reveal-order="1">AI를 활용해</span>
+            <span class="reveal hero-line" data-reveal-order="2">지식재산과 사업 실행의 마찰을 줄입니다.</span>
+          </h1>
+          <p class="hero-text reveal" data-reveal-order="3">
             딜라이트플로우는 상표·특허·리걸 워크플로우와 사업 실행 과정을 더 빠르고,
             더 정확하고, 더 저렴하게 만들기 위한 제품과 서비스를 설계합니다.
           </p>
-          <div class="hero-actions">
+          <div class="hero-actions reveal" data-reveal-order="4">
             <a class="button primary" href="#contact">문의하기</a>
             <a class="button secondary" href="#products">사업 보기</a>
           </div>
         </div>
-        <div class="hero-card">
+        <div class="hero-card reveal" data-reveal-order="5">
           <p class="card-label">What we do</p>
           <ul>
             <li>AI 기반 IP / Legal Tech 제품 개발</li>
@@ -173,5 +177,26 @@
       <p>AI for IP, legal, and business execution.</p>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script>
+    (function () {
+      var targets = document.querySelectorAll('.hero .reveal');
+      var reveal = function () {
+        targets.forEach(function (el) { el.style.opacity = 1; el.style.transform = 'none'; });
+      };
+      if (!window.gsap || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        reveal();
+        return;
+      }
+      var sorted = Array.prototype.slice.call(targets).sort(function (a, b) {
+        return (+a.dataset.revealOrder || 0) - (+b.dataset.revealOrder || 0);
+      });
+      var tl = gsap.timeline({ delay: 0.2, defaults: { ease: 'power3.out' } });
+      sorted.forEach(function (el, i) {
+        tl.to(el, { opacity: 1, y: 0, duration: 0.9 }, i * 0.12);
+      });
+    })();
+  </script>
 </body>
 </html>

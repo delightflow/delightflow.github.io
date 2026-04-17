@@ -75,10 +75,10 @@ a { color: inherit; text-decoration: none; }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(120% 80% at 20% 20%, rgba(29, 78, 216, 0.3) 0%, rgba(5, 6, 10, 0) 55%),
-    linear-gradient(180deg, rgba(5, 6, 10, 0.2) 0%, rgba(5, 6, 10, 0.45) 55%, rgba(5, 6, 10, 0.65) 100%);
+  background: linear-gradient(180deg, rgba(5, 6, 10, 0.15) 0%, rgba(5, 6, 10, 0.35) 55%, rgba(5, 6, 10, 0.55) 100%);
 }
+.reveal { opacity: 0; transform: translateY(24px); will-change: opacity, transform; }
+.hero-line { display: block; }
 @keyframes heroDrift {
   0%   { transform: scale(1.06); }
   100% { transform: scale(1.12) translate(-1.5%, -1%); }
