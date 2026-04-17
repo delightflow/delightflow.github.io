@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delightflow Intro — v1</title>
+  <meta name="description" content="HyperFrames로 생성한 Delightflow 소개 영상 v1 draft." />
+  <meta property="og:title" content="Delightflow Intro v1" />
+  <meta property="og:video" content="https://delightflow.github.io/intro/delightflow-intro-v1.mp4" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: #05060A;
+      color: #FFFFFF;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 32px;
+    }
+    header { max-width: 1000px; width: 100%; text-align: left; }
+    .kicker {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.5);
+      margin: 0 0 10px;
+    }
+    h1 { margin: 0; font-size: clamp(28px, 3vw, 40px); letter-spacing: -0.03em; }
+    p.sub { margin: 12px 0 0; color: rgba(255,255,255,0.7); font-size: 16px; }
+    .player {
+      width: min(100%, 1000px);
+      aspect-ratio: 16/9;
+      background: #000;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .player video { width: 100%; height: 100%; display: block; }
+    .meta {
+      width: min(100%, 1000px);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+    }
+    .meta span strong { color: #FFFFFF; font-weight: 600; }
+    a { color: #60A5FA; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .notes { max-width: 1000px; width: 100%; font-size: 14px; line-height: 1.65; color: rgba(255,255,255,0.6); }
+    .notes ul { padding-left: 18px; }
+    .notes li + li { margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="kicker">DELIGHTFLOW INTRO · v1 DRAFT</p>
+    <h1>HyperFrames로 만든 Delightflow 소개 영상</h1>
+    <p class="sub">HTML + GSAP 코드를 프레임 단위로 캡처해 MP4로 출력. 22초 / 1920×1080 / 30fps.</p>
+  </header>
+
+  <div class="player">
+    <video src="delightflow-intro-v1.mp4" controls autoplay muted loop playsinline></video>
+  </div>
+
+  <div class="meta">
+    <span><strong>길이</strong> 22초</span>
+    <span><strong>해상도</strong> 1920×1080</span>
+    <span><strong>용량</strong> 1.8 MB</span>
+    <span><strong>도구</strong> HyperFrames 0.4.2</span>
+    <span><a href="delightflow-intro-v1.mp4" download>MP4 다운로드</a></span>
+    <span><a href="/">← delightflow.github.io</a></span>
+  </div>
+
+  <div class="notes">
+    <strong style="color:#FFFFFF">이번 버전 메모</strong>
+    <ul>
+      <li>4 비트 구조: Hook → Pivot → Proof → Brand. 각 비트 5–7초.</li>
+      <li>Beat 4 배경은 원래 조약돌 영상을 넣을 자리 — HyperFrames 윈도우 경로 해석 버그로 이번 draft에는 블루 radial 글로우로 대체.</li>
+      <li>폰트는 Inter 폴백(Pretendard 미임베드). 다음 iteration에서 @font-face 주입 예정.</li>
+      <li>Draft 품질. 최종 배포용은 <code style="color:#FFFFFF">--quality high</code>로 재렌더.</li>
+    </ul>
+  </div>
+</body>
+</html>
