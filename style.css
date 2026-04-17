@@ -50,9 +50,41 @@ a { color: inherit; text-decoration: none; }
 .nav a:hover { color: var(--white); }
 
 .hero {
-  background: linear-gradient(135deg, #0d1321 0%, #172554 55%, #1d4ed8 100%);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #05060a;
   color: var(--white);
-  padding: 88px 0 72px;
+  padding: 140px 0 120px;
+}
+.hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  animation: heroDrift 22s ease-in-out infinite alternate;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 80% at 20% 20%, rgba(29, 78, 216, 0.3) 0%, rgba(5, 6, 10, 0) 55%),
+    linear-gradient(180deg, rgba(5, 6, 10, 0.2) 0%, rgba(5, 6, 10, 0.45) 55%, rgba(5, 6, 10, 0.65) 100%);
+}
+@keyframes heroDrift {
+  0%   { transform: scale(1.06); }
+  100% { transform: scale(1.12) translate(-1.5%, -1%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { animation: none; }
 }
 .hero-inner {
   display: grid;
@@ -94,11 +126,13 @@ a { color: inherit; text-decoration: none; }
 .button.secondary { border: 1px solid rgba(255,255,255,0.24); color: var(--white); }
 .button.secondary:hover { background: rgba(255,255,255,0.08); }
 .hero-card {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.16);
   border-radius: 24px;
   padding: 28px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 .card-label { margin: 0 0 16px; font-weight: 700; color: rgba(255,255,255,0.72); }
 .hero-card ul { margin: 0; padding-left: 18px; }
