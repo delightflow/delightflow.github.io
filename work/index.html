@@ -3,194 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Work · Delightflow</title>
-  <meta name="description" content="딜라이트플로우가 만든 12개 프로덕트 — 지식재산을 중심으로, 사업 실행의 전 영역." />
-  <meta property="og:title" content="Delightflow · Work" />
+  <title>프로덕트 · Delightflow</title>
+  <meta name="description" content="딜라이트플로우가 만든 12개 프로덕트 — 지식재산을 중심으로, 실행의 전 영역에 AI를 적용합니다." />
+  <meta property="og:title" content="Delightflow · Products" />
   <meta property="og:description" content="지식재산을 중심으로, 실행의 전 영역에 AI를 적용한 12개 프로덕트." />
+  <link rel="stylesheet" href="/style.css" />
   <style>
-    :root {
-      --bg: #05060A;
-      --navy: #0D1321;
-      --brand: #1D4ED8;
-      --brand-bright: #2563EB;
-      --surface: #FFFFFF;
-      --surface-soft: #F3F6FB;
-      --ink: #0F172A;
-      --ink-soft: #475569;
-      --line: #DBE4F0;
-      --white: #FFFFFF;
-      --max: 1180px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--surface);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
-      line-height: 1.65;
-    }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
-
-    /* Header */
-    .site-header {
-      background: rgba(13, 19, 33, 0.92);
-      color: var(--white);
-      padding: 18px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .header-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
-    .brand { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; }
-    .brand-sub { margin: 4px 0 0; color: rgba(255,255,255,0.72); font-size: 0.92rem; }
-    .nav { display: flex; gap: 18px; }
-    .nav a { color: rgba(255,255,255,0.84); font-size: 0.95rem; }
-    .nav a:hover { color: var(--white); }
-    .nav a.active { color: var(--white); font-weight: 600; }
-
-    /* Hero */
-    .hero {
-      background: var(--bg);
+    .work-hero {
+      background: linear-gradient(135deg, #0d1321 0%, #172554 55%, #1d4ed8 100%);
       color: var(--white);
       padding: 88px 0 64px;
     }
-    .kicker {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      color: rgba(255,255,255,0.55);
-      margin: 0 0 14px;
-      text-transform: uppercase;
-    }
-    .hero h1 {
+    .work-hero h1 {
       margin: 0;
-      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
       line-height: 1.12;
       letter-spacing: -0.035em;
-      max-width: 860px;
     }
-    .hero p {
+    .work-hero p.lead {
       margin: 20px 0 0;
       max-width: 720px;
-      color: rgba(255,255,255,0.78);
+      color: rgba(255,255,255,0.84);
       font-size: 1.05rem;
     }
-    .hero-stats {
+    .work-stats {
       margin-top: 36px;
       display: flex;
       flex-wrap: wrap;
       gap: 40px;
     }
-    .stat .num { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.03em; }
-    .stat .lbl { font-size: 0.82rem; color: rgba(255,255,255,0.55); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 4px; }
+    .work-stat .num { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.03em; }
+    .work-stat .lbl { font-size: 0.78rem; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
 
-    /* Section */
-    section.section { padding: 72px 0; }
-    section.section.alt { background: var(--surface-soft); }
-    .section-kicker {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      color: var(--ink-soft);
-      margin: 0 0 10px;
-      text-transform: uppercase;
-    }
-    .section h2 { margin: 0 0 6px; font-size: clamp(1.6rem, 2.4vw, 2.2rem); letter-spacing: -0.03em; }
-    .section .section-lead { margin: 0 0 40px; color: var(--ink-soft); max-width: 720px; }
-
-    /* Grids */
-    .grid { display: grid; gap: 20px; }
-    .grid.featured { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .grid.one { grid-template-columns: minmax(0, 1fr); }
-
-    /* Card */
-    .card {
-      background: var(--surface);
+    .work-card {
+      background: var(--white);
       border: 1px solid var(--line);
       border-radius: 20px;
       padding: 28px;
       display: flex;
       flex-direction: column;
       gap: 14px;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
     }
-    a.card:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08); border-color: #c7d4e6; }
-    .card .card-head {
+    a.work-card { text-decoration: none; color: inherit; transition: transform 0.18s ease, box-shadow 0.18s ease; }
+    a.work-card:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08); }
+    .work-card-head {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       gap: 12px;
     }
-    .card .card-tag {
+    .work-card-tag {
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.16em;
       color: var(--brand);
       text-transform: uppercase;
     }
-    .card .card-status {
+    .work-status {
       font-size: 11px;
       font-weight: 600;
       padding: 3px 10px;
       border-radius: 999px;
-      letter-spacing: 0.02em;
       white-space: nowrap;
     }
     .status-live { background: #dcfce7; color: #166534; }
     .status-dev { background: #dbeafe; color: #1e40af; }
     .status-rnd { background: #fef3c7; color: #92400e; }
     .status-pre { background: #f1f5f9; color: #475569; }
-    .card h3 {
-      margin: 0;
-      font-size: 1.45rem;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-    }
-    .card .card-sub { margin: 0; font-weight: 500; color: var(--ink-soft); font-size: 0.95rem; }
-    .card .card-body { margin: 0; color: var(--ink-soft); font-size: 0.96rem; line-height: 1.6; }
-    .card .card-link {
+
+    .work-card h3 { margin: 0; font-size: 1.45rem; letter-spacing: -0.02em; line-height: 1.2; }
+    .work-card .work-sub { margin: 0; font-weight: 500; color: var(--text-soft); font-size: 0.95rem; }
+    .work-card .work-body { margin: 0; color: var(--text-soft); font-size: 0.95rem; line-height: 1.6; }
+    .work-card .work-link {
       margin-top: auto;
       font-size: 0.85rem;
       font-weight: 600;
       color: var(--brand);
-      letter-spacing: 0.02em;
       display: inline-flex;
       align-items: center;
       gap: 6px;
     }
-    .card .card-link::after { content: "↗"; }
+    .work-card .work-link::after { content: "↗"; }
 
-    /* Featured variant */
-    .card.featured { padding: 32px; min-height: 320px; }
-    .card.featured h3 { font-size: 1.7rem; }
-    .card.hero-card {
+    .work-card.featured { min-height: 300px; padding: 32px; }
+    .work-card.featured h3 { font-size: 1.7rem; }
+
+    .work-card.dark {
       background: linear-gradient(135deg, #0D1321 0%, #0F172A 60%, #1D4ED8 100%);
       color: var(--white);
       border-color: transparent;
     }
-    .card.hero-card .card-tag { color: #60A5FA; }
-    .card.hero-card .card-sub,
-    .card.hero-card .card-body { color: rgba(255,255,255,0.82); }
-    .card.hero-card .card-link { color: #93C5FD; }
+    .work-card.dark .work-card-tag { color: #60A5FA; }
+    .work-card.dark .work-sub,
+    .work-card.dark .work-body { color: rgba(255,255,255,0.82); }
+    .work-card.dark .work-link { color: #93C5FD; }
 
-    /* Footer */
-    .site-footer {
-      border-top: 1px solid var(--line);
-      padding: 28px 0 40px;
-      color: var(--ink-soft);
-      font-size: 0.92rem;
-    }
-    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-
-    /* Responsive */
     @media (max-width: 900px) {
-      .grid.featured, .grid.three, .grid.two { grid-template-columns: 1fr; }
-      .header-inner { flex-direction: column; align-items: flex-start; }
-      section.section { padding: 56px 0; }
-      .hero { padding: 64px 0 48px; }
-      .hero-stats { gap: 28px; }
+      .work-hero { padding: 64px 0 48px; }
+      .work-stats { gap: 24px; }
     }
   </style>
 </head>
@@ -199,221 +110,236 @@
   <header class="site-header">
     <div class="container header-inner">
       <div>
-        <div class="brand">Delightflow</div>
+        <div class="brand"><a href="/">Delightflow</a></div>
         <p class="brand-sub">AI로 지식재산과 비즈니스 실행을 바꾸는 회사</p>
       </div>
       <nav class="nav">
-        <a href="/">홈</a>
-        <a href="/work/" class="active">프로덕트</a>
-        <a href="/intro/">소개 영상</a>
+        <a href="/#about">회사소개</a>
+        <a href="/#business">사업영역</a>
+        <a href="/work/">프로덕트</a>
         <a href="/#contact">문의</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <p class="kicker">Portfolio · 12 products</p>
-      <h1>지식재산을 중심으로,<br/>실행의 전 영역에 AI를 적용합니다.</h1>
-      <p>
-        딜라이트플로우가 직접 설계하고 운영하는 프로덕트는 12개. 핵심 축은 IP·Legal Tech 4개 프로덕트이며,
-        그 주변으로 자사 AI 인프라와 B2C 앱, 크리에이터 툴, 커뮤니티 플랫폼이 함께 자랍니다.
-      </p>
-      <div class="hero-stats">
-        <div class="stat"><div class="num">12</div><div class="lbl">Products</div></div>
-        <div class="stat"><div class="num">4</div><div class="lbl">IP · Legal Tech</div></div>
-        <div class="stat"><div class="num">8</div><div class="lbl">Adjacent</div></div>
-        <div class="stat"><div class="num">86%</div><div class="lbl">HackathonHub 예측 정확도</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <p class="section-kicker">IP · Legal Tech — Core Cluster</p>
-      <h2>지식재산 전 워크플로우를 AI로 수직 통합</h2>
-      <p class="section-lead">검색 → 진단 → 초안 → 출원까지. 변리사 네트워크와 결합된 AI 하이브리드 워크플로우.</p>
-
-      <div class="grid featured">
-        <div class="card featured hero-card">
-          <div class="card-head">
-            <div class="card-tag">AI IP SaaS · Platform</div>
-            <span class="card-status status-live">운영</span>
-          </div>
-          <h3>InventIPS</h3>
-          <p class="card-sub">변리사·발명자를 위한 AI 지식재산 SaaS</p>
-          <p class="card-body">선행기술 검색(FAISS+BM25 하이브리드 RAG), 명세서 자동 초안, OA 대응, 상표 분석을 원스톱으로. KIPRIS/KIPRIS Plus 공식 연동, B2B2G 전환 중.</p>
-        </div>
-
-        <div class="card featured">
-          <div class="card-head">
-            <div class="card-tag">AI Trademark · B2C</div>
-            <span class="card-status status-live">운영</span>
-          </div>
-          <h3>Marknser</h3>
-          <p class="card-sub">AI 상표 검색·등록가능성 분석 SaaS</p>
-          <p class="card-body">KIPRIS + USPTO 다중 소스 통합 검색. 유사상표·식별력·저명상표·온라인 신호를 가중 평균한 등록가능성 점수 + 충돌 회피 브랜드명 자동 제안. 자체 특허 기반.</p>
-        </div>
-
-        <div class="card featured">
-          <div class="card-head">
-            <div class="card-tag">Patent Filing · Hybrid</div>
-            <span class="card-status status-live">운영</span>
-          </div>
-          <h3>NextIP</h3>
-          <p class="card-sub">변리사 워크플로우 + AI 특허 출원 SaaS</p>
-          <p class="card-body">아이디어 → 3분 내 특허 가능성 분석 + 명세서 초안 → 변리사 최종 검토. 단일가 ₩1,500,000/건. 변리사-AI 하이브리드로 품질 게이트 확보.</p>
+  <main>
+    <section class="work-hero">
+      <div class="container">
+        <p class="eyebrow">Products · 12</p>
+        <h1>지식재산을 중심으로,<br/>실행의 전 영역에 AI를 적용합니다.</h1>
+        <p class="lead">
+          핵심 축은 IP·Legal Tech 4개 프로덕트입니다. 그 주변으로 자사 AI 인프라와 B2C 앱,
+          크리에이터 툴, 커뮤니티 플랫폼이 함께 자랍니다.
+        </p>
+        <div class="work-stats">
+          <div class="work-stat"><div class="num">12</div><div class="lbl">Products</div></div>
+          <div class="work-stat"><div class="num">4</div><div class="lbl">IP · Legal Tech</div></div>
+          <div class="work-stat"><div class="num">8</div><div class="lbl">Adjacent</div></div>
+          <div class="work-stat"><div class="num">86%</div><div class="lbl">해커톤 예측 정확도</div></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section alt">
-    <div class="container">
-      <p class="section-kicker">IP Cluster · Supporting Layer</p>
-      <h2>고객 진입점과 접수 파이프라인</h2>
-      <p class="section-lead">복잡한 백엔드를 전환 최적화된 랜딩·접수 레이어로 분리.</p>
+    <section class="section">
+      <div class="container">
+        <p class="section-kicker">IP · Legal Tech — Core Cluster</p>
+        <h2>지식재산 전 워크플로우를 AI로 수직 통합</h2>
+        <p class="section-lead">검색 → 진단 → 초안 → 출원까지. 변리사 네트워크와 결합된 AI 하이브리드 워크플로우.</p>
 
-      <div class="grid one">
-        <div class="card">
-          <div class="card-head">
-            <div class="card-tag">IP Marketing · Intake</div>
-            <span class="card-status status-live">운영</span>
+        <div class="grid three">
+          <div class="work-card featured dark">
+            <div class="work-card-head">
+              <div class="work-card-tag">AI IP SaaS · Platform</div>
+              <span class="work-status status-live">운영</span>
+            </div>
+            <h3>InventIPS</h3>
+            <p class="work-sub">변리사·발명자를 위한 AI 지식재산 SaaS</p>
+            <p class="work-body">선행기술 검색(FAISS+BM25 하이브리드 RAG), 명세서 자동 초안, OA 대응, 상표 분석을 원스톱으로. KIPRIS/KIPRIS Plus 공식 연동.</p>
           </div>
-          <h3>PatentWith</h3>
-          <p class="card-sub">특허 서비스 마케팅·접수 플랫폼</p>
-          <p class="card-body">특허 진단·초안·선행기술·경쟁기술·공개 전 조사 서비스의 접수·견적·문의를 담당. IP 클러스터(InventIPS + NextIP + Marknser)의 마케팅 프론트로 기능하며 리드 퀄리피케이션과 고객 전달을 수행.</p>
+
+          <div class="work-card featured">
+            <div class="work-card-head">
+              <div class="work-card-tag">AI Trademark · B2C</div>
+              <span class="work-status status-live">운영</span>
+            </div>
+            <h3>Marknser</h3>
+            <p class="work-sub">AI 상표 검색·등록가능성 분석 SaaS</p>
+            <p class="work-body">KIPRIS + USPTO 다중 소스 통합 검색. 유사상표·식별력·저명상표·온라인 신호를 가중 평균한 등록가능성 점수 + 충돌 회피 브랜드명 자동 제안. 자체 특허 기반.</p>
+          </div>
+
+          <div class="work-card featured">
+            <div class="work-card-head">
+              <div class="work-card-tag">Patent Filing · Hybrid</div>
+              <span class="work-status status-live">운영</span>
+            </div>
+            <h3>NextIP</h3>
+            <p class="work-sub">변리사 워크플로우 + AI 특허 출원 SaaS</p>
+            <p class="work-body">아이디어에서 3분 내 특허 가능성 분석과 명세서 초안. 변리사 최종 검토로 품질을 보증하는 AI-변리사 하이브리드.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <p class="section-kicker">Self-Infrastructure</p>
-      <h2>자사 프로덕트의 공통 AI 엔진</h2>
-      <p class="section-lead">6개 자사 사업의 챗봇·에이전트를 한 플랫폼 위에서 운영. 멀티 채널 · 멀티 LLM · 멀티 테넌트.</p>
+    <section class="section section-alt">
+      <div class="container">
+        <p class="section-kicker">IP Cluster · Supporting Layer</p>
+        <h2>고객 진입점과 접수 파이프라인</h2>
+        <p class="section-lead">복잡한 백엔드를 전환 최적화된 랜딩·접수 레이어로 분리.</p>
 
-      <div class="grid one">
-        <div class="card">
-          <div class="card-head">
-            <div class="card-tag">AI Agent Platform</div>
-            <span class="card-status status-live">운영</span>
+        <div class="grid one">
+          <div class="work-card">
+            <div class="work-card-head">
+              <div class="work-card-tag">IP Marketing · Intake</div>
+              <span class="work-status status-live">운영</span>
+            </div>
+            <h3>PatentWith</h3>
+            <p class="work-sub">특허 서비스 마케팅·접수 플랫폼</p>
+            <p class="work-body">특허 진단·초안·선행기술·경쟁기술·공개 전 조사 서비스의 접수·견적·문의를 담당. IP 클러스터(InventIPS · NextIP · Marknser)의 마케팅 프론트로 기능하며 리드 퀄리피케이션과 고객 전달을 수행.</p>
           </div>
-          <h3>OpenBoss</h3>
-          <p class="card-sub">멀티채널 AI 에이전트 플랫폼 (WhatsApp · Telegram · Slack · Discord · Signal · iMessage · Web)</p>
-          <p class="card-body">하나의 에이전트를 7개 메신저+웹에 동시 운영. 멀티 테넌트 구조(businesses/&lt;name&gt;/)로 즉시 SaaS화 가능. 자사 Marknser · NextIP · Peergent · Addhead · TradeWiser · Simfit 6개 사업에 이미 공통 적용.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section alt">
-    <div class="container">
-      <p class="section-kicker">Consumer Apps</p>
-      <h2>생활 밀착 AI B2C 프로덕트</h2>
-      <p class="section-lead">헬스케어 · 피트니스 · 금융 의사결정 영역에 AI를 적용.</p>
+    <section class="section">
+      <div class="container">
+        <p class="section-kicker">Self-Infrastructure</p>
+        <h2>자사 프로덕트의 공통 AI 엔진</h2>
+        <p class="section-lead">6개 자사 사업의 챗봇·에이전트를 한 플랫폼 위에서 운영.</p>
 
-      <div class="grid three">
-        <div class="card">
-          <div class="card-head">
-            <div class="card-tag">Digital Health</div>
-            <span class="card-status status-live">운영</span>
+        <div class="grid one">
+          <div class="work-card">
+            <div class="work-card-head">
+              <div class="work-card-tag">AI Agent Platform</div>
+              <span class="work-status status-live">운영</span>
+            </div>
+            <h3>OpenBoss</h3>
+            <p class="work-sub">멀티 채널 · 멀티 LLM · 멀티 테넌트 AI 에이전트 플랫폼</p>
+            <p class="work-body">하나의 에이전트를 WhatsApp · Telegram · Slack · Discord · Signal · iMessage · Web 7개 채널에 동시 운영. 자사 Marknser · NextIP · Peergent · Addhead · TradeWiser · Simfit 6개 사업에 이미 공통 적용.</p>
           </div>
-          <h3>Addhead</h3>
-          <p class="card-sub">성인 ADHD 주의력 평가 + AI 리포트</p>
-          <p class="card-body">임상 검증 CAT 6종 기반 인지 테스트. 웹 + Android/iOS + 한/영/스 3개 언어. Polar + RevenueCat 이중 결제.</p>
-          <a href="https://addhead.my" target="_blank" rel="noopener" class="card-link">addhead.my</a>
-        </div>
-
-        <div class="card">
-          <div class="card-head">
-            <div class="card-tag">Audio AI · Fitness</div>
-            <span class="card-status status-dev">개발</span>
-          </div>
-          <h3>Simfit</h3>
-          <p class="card-sub">AI 오디오 코칭 피트니스 앱</p>
-          <p class="card-body">TTS 실시간 음성 가이드로 세트·반복·달리기를 코칭. 170개 운동 데이터셋, Expo 기반 크로스 플랫폼. 특허 설계 문서 보유.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-head">
-            <div class="card-tag">Fintech · Behavioral</div>
-            <span class="card-status status-pre">pre-monetization</span>
-          </div>
-          <h3>TradeWiser</h3>
-          <p class="card-sub">AI 투자 습관 코치</p>
-          <p class="card-body">TradingView 스크리너 + 개인 의사결정 기록 결합. 행동경제학 기반 감정 매매 패턴 탐지. 단순 포트폴리오 추적이 아닌 코칭 포지션.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <p class="section-kicker">DevTool · Creator</p>
-      <h2>AI 네이티브 개발·크리에이터 툴</h2>
-      <p class="section-lead">바이브코딩 시대의 빈 공간을 메꾸는 도구.</p>
+    <section class="section section-alt">
+      <div class="container">
+        <p class="section-kicker">Consumer Apps</p>
+        <h2>생활 밀착 AI B2C 프로덕트</h2>
+        <p class="section-lead">헬스케어 · 피트니스 · 금융 의사결정 영역에 AI를 적용.</p>
 
-      <div class="grid two">
-        <div class="card">
-          <div class="card-head">
-            <div class="card-tag">DevTool SaaS · GEO</div>
-            <span class="card-status status-live">운영</span>
+        <div class="grid three">
+          <a class="work-card" href="https://addhead.my" target="_blank" rel="noopener">
+            <div class="work-card-head">
+              <div class="work-card-tag">Digital Health</div>
+              <span class="work-status status-live">운영</span>
+            </div>
+            <h3>Addhead</h3>
+            <p class="work-sub">성인 ADHD 주의력 평가 + AI 리포트</p>
+            <p class="work-body">임상 검증 CAT 6종 기반 인지 테스트. 웹 + Android/iOS + 한/영/스 3개 언어. Polar + RevenueCat 이중 결제.</p>
+            <span class="work-link">addhead.my</span>
+          </a>
+
+          <div class="work-card">
+            <div class="work-card-head">
+              <div class="work-card-tag">Audio AI · Fitness</div>
+              <span class="work-status status-dev">개발</span>
+            </div>
+            <h3>Simfit</h3>
+            <p class="work-sub">AI 오디오 코칭 피트니스 앱</p>
+            <p class="work-body">TTS 실시간 음성 가이드로 세트·반복·달리기를 코칭. 170개 운동 데이터셋, Expo 기반 크로스 플랫폼. 특허 설계 문서 보유.</p>
           </div>
-          <h3>Aftervibe</h3>
-          <p class="card-sub">바이브코딩 사후진단 SaaS</p>
-          <p class="card-body">AI로 빌드 후 막히는 5가지 벽(SEO · GEO · Compliance · IP · Design)을 자동 진단·수정. ChatGPT+Gemini 병렬 인용 분석, GitHub PR 자동 수정, Playwright 동적 감사. Autoresearch 40/40.</p>
-          <a href="https://aftervibe.web.app" target="_blank" rel="noopener" class="card-link">aftervibe.web.app</a>
-        </div>
 
-        <div class="card">
-          <div class="card-head">
-            <div class="card-tag">Creator Tool · R&amp;D</div>
-            <span class="card-status status-rnd">R&amp;D</span>
+          <div class="work-card">
+            <div class="work-card-head">
+              <div class="work-card-tag">Fintech · Behavioral</div>
+              <span class="work-status status-pre">pre-monetization</span>
+            </div>
+            <h3>TradeWiser</h3>
+            <p class="work-sub">AI 투자 습관 코치</p>
+            <p class="work-body">TradingView 스크리너와 개인 의사결정 기록을 결합해 감정적 매매 패턴을 탐지. 단순 포트폴리오 추적이 아닌 행동경제학 기반 코칭 포지션.</p>
           </div>
-          <h3>CapcutAI</h3>
-          <p class="card-sub">자연어 영상 편집 자동화</p>
-          <p class="card-body">CapCut 프로젝트 파일을 자연어 명령으로 생성·수정하는 capcutlib. 기존 오픈소스(pyCapCut · CapGenie) 대비 자연어 네이티브. Claude Code 스킬 패키징 완료.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt">
-    <div class="container">
-      <p class="section-kicker">Community · Platform</p>
-      <h2>사람들이 모이는 AI 레이어</h2>
-      <p class="section-lead">피어 매칭 · 예측 마켓 같은 커뮤니티형 AI 서비스.</p>
-
-      <div class="grid two">
-        <div class="card">
-          <div class="card-head">
-            <div class="card-tag">AI Community</div>
-            <span class="card-status status-dev">개발</span>
-          </div>
-          <h3>Peergent</h3>
-          <p class="card-sub">AI 피어그룹 매칭 플랫폼</p>
-          <p class="card-body">학습·창업·전문가 커뮤니티에서 비슷한 단계·관심사를 가진 피어를 AI가 매칭. 에이전트 기반 그룹 모더레이션. 특허 설계 문서 보유.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-head">
-            <div class="card-tag">AI Prediction</div>
-            <span class="card-status status-live">운영</span>
-          </div>
-          <h3>HackathonHub</h3>
-          <p class="card-sub">AI 해커톤 우승자 예측 플랫폼</p>
-          <p class="card-body">참가팀 아이디어를 독창성·실현가능성·시장성·팀 역량 4축으로 점수화. 역대 예측 정확도 86%. 해커톤 자체 주관(상금 ₩10M) 사례 보유.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="section-kicker">DevTool · Creator</p>
+        <h2>AI 네이티브 개발·크리에이터 툴</h2>
+        <p class="section-lead">바이브코딩 시대의 빈 공간을 메꾸는 도구.</p>
+
+        <div class="grid two">
+          <a class="work-card" href="https://aftervibe.web.app" target="_blank" rel="noopener">
+            <div class="work-card-head">
+              <div class="work-card-tag">DevTool SaaS · GEO</div>
+              <span class="work-status status-live">운영</span>
+            </div>
+            <h3>Aftervibe</h3>
+            <p class="work-sub">바이브코딩 사후진단 SaaS</p>
+            <p class="work-body">AI로 빌드 후 막히는 5가지 벽(SEO · GEO · Compliance · IP · Design)을 자동 진단·수정. ChatGPT + Gemini 병렬 인용 분석, GitHub PR 자동 수정, Playwright 동적 감사.</p>
+            <span class="work-link">aftervibe.web.app</span>
+          </a>
+
+          <div class="work-card">
+            <div class="work-card-head">
+              <div class="work-card-tag">Creator Tool</div>
+              <span class="work-status status-rnd">R&amp;D</span>
+            </div>
+            <h3>CapcutAI</h3>
+            <p class="work-sub">자연어 영상 편집 자동화</p>
+            <p class="work-body">CapCut 프로젝트 파일을 자연어 명령으로 생성·수정하는 capcutlib. 기존 오픈소스(pyCapCut · CapGenie) 대비 자연어 네이티브. Claude Code 스킬 패키징 완료.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <p class="section-kicker">Community · Platform</p>
+        <h2>사람들이 모이는 AI 레이어</h2>
+        <p class="section-lead">피어 매칭 · 예측 마켓 같은 커뮤니티형 AI 서비스.</p>
+
+        <div class="grid two">
+          <div class="work-card">
+            <div class="work-card-head">
+              <div class="work-card-tag">AI Community</div>
+              <span class="work-status status-dev">개발</span>
+            </div>
+            <h3>Peergent</h3>
+            <p class="work-sub">AI 피어그룹 매칭 플랫폼</p>
+            <p class="work-body">학습·창업·전문가 커뮤니티에서 비슷한 단계·관심사를 가진 피어를 AI가 매칭. 에이전트 기반 그룹 모더레이션. 특허 설계 문서 보유.</p>
+          </div>
+
+          <div class="work-card">
+            <div class="work-card-head">
+              <div class="work-card-tag">AI Prediction</div>
+              <span class="work-status status-live">운영</span>
+            </div>
+            <h3>HackathonHub</h3>
+            <p class="work-sub">AI 해커톤 우승자 예측 플랫폼</p>
+            <p class="work-body">참가팀 아이디어를 독창성·실현가능성·시장성·팀 역량 4축으로 점수화. 역대 예측 정확도 86%. 해커톤 자체 주관(상금 ₩10M) 사례 보유.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section">
+      <div class="container contact-box">
+        <div>
+          <p class="section-kicker">Contact</p>
+          <h2>협업하고 싶으신가요?</h2>
+          <p>제품 협업, 사업 제휴, 서비스 문의가 있다면 아래 이메일로 연락해주세요.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:contact@patentwith.com">contact@patentwith.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© 2026 Delightflow. All rights reserved.</p>
-      <p><a href="/">← delightflow.github.io</a></p>
+      <p>AI for IP, legal, and business execution.</p>
     </div>
   </footer>
 
