@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Delightflow | AI로 지식재산과 비즈니스 실행을 바꾸는 회사</title>
-  <meta name="description" content="딜라이트플로우는 AI를 활용해 지식재산, 리걸, 사업 실행의 비효율을 줄이는 제품과 서비스를 만드는 회사입니다." />
+  <meta name="description" content="딜라이트플로우는 AI를 활용해 지식재산, 리걸, 사업 실행의 비효율을 줄이는 제품과 서비스를 만드는 회사입니다. 인벤팁스·마크앤서·넥스트IP·패튼위드를 운영합니다." />
   <meta property="og:title" content="Delightflow" />
   <meta property="og:description" content="AI로 지식재산과 비즈니스 실행을 바꾸는 회사" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://delightflow.github.io/" />
+  <meta property="og:image" content="https://delightflow.github.io/media/delightflow-intro-v2-poster.jpg" />
   <link rel="stylesheet" href="style.css" />
   <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
@@ -21,7 +22,9 @@
       </div>
       <nav class="nav">
         <a href="#about">회사소개</a>
-        <a href="#business">사업영역</a>
+        <a href="#business">비전</a>
+        <a href="#products">서비스</a>
+        <a href="#proof">근거</a>
         <a href="/work/">프로덕트</a>
         <a href="#contact">문의</a>
       </nav>
@@ -29,7 +32,7 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" data-hero>
       <div class="hero-video-wrap" aria-hidden="true">
         <video
           class="hero-video"
@@ -41,6 +44,10 @@
           preload="auto"
         ></video>
         <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-fx" aria-hidden="true">
+        <div class="hero-grid"></div>
+        <div class="hero-spot"></div>
       </div>
       <div class="container hero-inner">
         <div class="hero-copy">
@@ -54,114 +61,202 @@
             더 정확하고, 더 저렴하게 만들기 위한 제품과 서비스를 설계합니다.
           </p>
           <div class="hero-actions reveal" data-reveal-order="4">
-            <a class="button primary" href="#contact">문의하기</a>
-            <a class="button secondary" href="#products">사업 보기</a>
+            <a class="button primary" href="#contact" data-magnetic>문의하기</a>
+            <a class="button secondary" href="#products">서비스 보기</a>
           </div>
         </div>
-        <div class="hero-card reveal" data-reveal-order="5">
-          <p class="card-label">What we do</p>
-          <ul>
-            <li>AI 기반 IP / Legal Tech 제품 개발</li>
-            <li>상표·특허·출원 관련 자동화 서비스 설계</li>
-            <li>사업 운영과 세일즈 실행을 돕는 워크플로우 구축</li>
-          </ul>
+        <div class="hero-visual reveal" data-reveal-order="5">
+          <div class="hero-card" data-tilt>
+            <p class="card-label">Our services</p>
+            <ul class="orbit">
+              <li class="orbit-item" data-depth="1.4"><a href="#products"><strong>인벤팁스</strong><span>AI 특허 업무 플랫폼</span></a></li>
+              <li class="orbit-item" data-depth="0.9"><a href="#products"><strong>마크앤서</strong><span>AI 상표 검색·출원</span></a></li>
+              <li class="orbit-item" data-depth="1.2"><a href="#products"><strong>넥스트IP</strong><span>발명 특허 AI 에이전트</span></a></li>
+              <li class="orbit-item" data-depth="0.7"><a href="#products"><strong>패튼위드</strong><span>특허법률사무소</span></a></li>
+            </ul>
+            <p class="card-foot">검색 → 진단 → 초안 → 출원</p>
+          </div>
         </div>
       </div>
+      <a class="hero-scroll" href="#about" aria-label="회사 소개로 이동"><span></span></a>
     </section>
 
     <section id="about" class="section">
-      <div class="container narrow">
-        <p class="section-kicker">About</p>
-        <h2>딜라이트플로우는 어떤 회사인가</h2>
-        <p>
-          딜라이트플로우는 지식재산과 사업 실행 현장에서 반복되는 비효율을 AI로 재설계하는 법인입니다.
-          우리는 단순한 정보 제공이 아니라, 실제로 의사결정과 실행 속도를 높이는 제품을 만듭니다.
-        </p>
-        <p>
-          특히 상표·특허·출원·리걸 워크플로우처럼 전문성과 속도가 동시에 필요한 영역에서,
-          사람이 하던 복잡한 판단과 준비 과정을 더 간결한 사용자 경험으로 바꾸는 데 집중합니다.
-        </p>
-        <dl class="company-info">
-          <div>
-            <dt>주소</dt>
-            <dd>경기도 시흥시 정왕동 1277-14 길산에스에스티지식산업센터 1층 143호</dd>
+      <div class="container about-grid">
+        <div>
+          <p class="section-kicker">About</p>
+          <h2>딜라이트플로우는 어떤 회사인가</h2>
+          <p>
+            딜라이트플로우는 지식재산과 사업 실행 현장에서 반복되는 비효율을 AI로 재설계하는 법인입니다.
+            우리는 단순한 정보 제공이 아니라, 실제로 의사결정과 실행 속도를 높이는 제품을 만듭니다.
+          </p>
+          <p>
+            특히 상표·특허·출원·리걸 워크플로우처럼 전문성과 속도가 동시에 필요한 영역에서,
+            사람이 하던 복잡한 판단과 준비 과정을 더 간결한 사용자 경험으로 바꾸는 데 집중합니다.
+          </p>
+          <dl class="company-info">
+            <div>
+              <dt>주소</dt>
+              <dd>경기도 시흥시 정왕동 1277-14 길산에스에스티지식산업센터 1층 143호</dd>
+            </div>
+            <div>
+              <dt>사업자번호</dt>
+              <dd>548-86-03819</dd>
+            </div>
+            <div>
+              <dt>전화번호</dt>
+              <dd><a href="tel:01068356187">010-6835-6187</a></dd>
+            </div>
+            <div>
+              <dt>대표</dt>
+              <dd>전승열</dd>
+            </div>
+          </dl>
+        </div>
+        <figure class="intro-film">
+          <div class="intro-film-frame">
+            <video
+              class="lazy-video"
+              muted
+              loop
+              playsinline
+              controls
+              preload="none"
+              width="1280"
+              height="720"
+              poster="media/delightflow-intro-v2-poster.jpg"
+              aria-label="딜라이트플로우 회사 소개 영상 (30초, 소리 없음)"
+            >
+              <source data-src="media/delightflow-intro-v2.webm" type="video/webm" />
+              <source data-src="media/delightflow-intro-v2.mp4" type="video/mp4" />
+            </video>
           </div>
-          <div>
-            <dt>사업자번호</dt>
-            <dd>548-86-03819</dd>
-          </div>
-          <div>
-            <dt>전화번호</dt>
-            <dd><a href="tel:01068356187">010-6835-6187</a></dd>
-          </div>
-          <div>
-            <dt>대표</dt>
-            <dd>전승열</dd>
-          </div>
-        </dl>
+          <figcaption>회사 소개 영상 · 30초 · 소리 없음</figcaption>
+        </figure>
       </div>
     </section>
 
     <section id="business" class="section section-alt">
       <div class="container">
-        <p class="section-kicker">Business</p>
-        <h2>사업영역</h2>
+        <p class="section-kicker">Problem &amp; Vision</p>
+        <h2>전문성과 속도가 동시에 필요한 일</h2>
+        <p class="section-lead">
+          특허·상표 업무는 검색, 진단, 초안, 출원이 이어지는 긴 흐름입니다. 우리는 이 흐름에서 사람이 반복하던 준비를 AI가 맡고,
+          전문가는 판단과 책임에 집중하는 구조를 만듭니다.
+        </p>
         <div class="grid three">
           <article class="panel">
+            <p class="panel-num">01 · 문제</p>
+            <h3>준비에 드는 시간</h3>
+            <p>선행조사, 명세서, 의견서처럼 결과물 하나를 내기까지 자료를 찾고 대조하고 형식을 맞추는 준비가 길게 이어집니다.</p>
+          </article>
+          <article class="panel">
+            <p class="panel-num">02 · 문제</p>
+            <h3>흩어진 단계</h3>
+            <p>검색·진단·초안·출원이 서로 다른 도구와 사람 사이를 오가며, 고객은 지금 어디까지 왔는지 알기 어렵습니다.</p>
+          </article>
+          <article class="panel">
+            <p class="panel-num">03 · 비전</p>
+            <h3>AI가 처리하고, 변리사가 책임지는 구조</h3>
+            <p>반복되는 조사·작성은 AI 에이전트가 맡고, 최종 판단과 서명은 변리사가 합니다. 빠르면서도 책임이 분명한 경험을 지향합니다.</p>
+          </article>
+        </div>
+        <ol class="flow-line" aria-label="지식재산 워크플로우">
+          <li>검색</li><li>진단</li><li>초안</li><li>출원</li>
+        </ol>
+        <div class="grid three business-grid">
+          <div>
             <h3>IP &amp; Legal Tech</h3>
             <p>상표·특허·출원 관련 탐색, 판단, 문서화, 고객 커뮤니케이션 과정을 AI로 단순화합니다.</p>
-          </article>
-          <article class="panel">
+          </div>
+          <div>
             <h3>AI Product Build</h3>
             <p>현장 문제를 기반으로 실제 고객이 바로 쓰는 SaaS, 자동화 도구, 리서치 워크플로우를 만듭니다.</p>
-          </article>
-          <article class="panel">
+          </div>
+          <div>
             <h3>Execution Systems</h3>
             <p>사업 운영, 세일즈, 고객 응대, 내부 실행 체계를 더 작고 빠르게 움직이는 구조로 설계합니다.</p>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="products" class="section">
       <div class="container">
-        <p class="section-kicker">Products</p>
+        <p class="section-kicker">Services</p>
         <h2>지식재산을 중심으로, 실행의 전 영역에</h2>
         <p class="section-lead">
-          핵심 축은 IP·Legal Tech 4개 프로덕트. 그 주변으로 자사 AI 인프라와 B2C 앱, 크리에이터 툴, 커뮤니티 플랫폼까지 총 12개를 직접 운영합니다.
+          핵심 축은 IP·Legal Tech 프로덕트입니다. 그 주변으로 자사 AI 인프라와 B2C 앱, 크리에이터 툴, 커뮤니티 플랫폼까지 총 12개를 직접 운영합니다.
         </p>
-        <div class="grid three">
-          <article class="panel product">
-            <p class="product-tag">AI IP SaaS · Platform</p>
-            <h3>InventIPS</h3>
-            <p>선행기술 검색, 명세서 자동 초안, OA 대응, 상표 분석을 원스톱으로 제공하는 AI 지식재산 SaaS. KIPRIS/KIPRIS Plus 공식 연동.</p>
-          </article>
-          <article class="panel product">
-            <p class="product-tag">AI Trademark · B2C</p>
-            <h3>Marknser</h3>
-            <p>KIPRIS·USPTO 다중 소스 통합 검색 + 등록가능성 점수화 + 충돌 회피 브랜드명 자동 제안. 자체 특허 기반.</p>
-          </article>
-          <article class="panel product">
-            <p class="product-tag">Patent Filing · Hybrid</p>
-            <h3>NextIP</h3>
-            <p>발명 아이디어를 3분 만에 분석하고 명세서 초안을 생성. 변리사 최종 검토로 품질을 보증하는 AI-변리사 하이브리드 출원.</p>
-          </article>
+        <div class="grid two">
+          <a class="service-card is-dark" href="https://inventips.net/" target="_blank" rel="noopener" data-spot>
+            <p class="product-tag">AI 특허 업무 플랫폼</p>
+            <h3>인벤팁스 <small>InventIPS</small></h3>
+            <p>선행조사·명세서 작성·OA 대응·디자인 출원 도면·상표 검토를 AI 에이전트가 처리하고, 변리사는 결과를 검토하고 서명합니다. KIPRIS 연동.</p>
+            <span class="service-link">inventips.net</span>
+          </a>
+          <a class="service-card" href="https://marknser.com/" target="_blank" rel="noopener" data-spot>
+            <p class="product-tag">AI 상표 검색 · 출원</p>
+            <h3>마크앤서 <small>Marknser</small></h3>
+            <p>브랜드명을 입력하면 KIPRIS 특허청 데이터로 유사상표를 AI 검색해 등록 가능성을 무료로 분석하고, 변리사가 출원 전략까지 검토합니다.</p>
+            <span class="service-link">marknser.com</span>
+          </a>
+          <a class="service-card" href="https://nextip.ai/" target="_blank" rel="noopener" data-spot>
+            <p class="product-tag">발명 특허 AI 에이전트</p>
+            <h3>넥스트IP <small>NextIP</small></h3>
+            <p>아이디어부터 특허출원까지 한 번에. 특허 가능성 분석과 명세서 초안을 AI가 만들고, 변리사 최종 검토로 품질을 확인하는 하이브리드 출원.</p>
+            <span class="service-link">nextip.ai</span>
+          </a>
+          <a class="service-card" href="https://www.patentwith.com/" target="_blank" rel="noopener" data-spot>
+            <p class="product-tag">특허법률사무소</p>
+            <h3>패튼위드 <small>PatentWith</small></h3>
+            <p>국내외 특허·상표·디자인·분쟁 대응을 다루는 지식재산 파트너. 변리사가 직접 1:1로 응대하고, 추가 비용 없는 정액제 견적을 제공합니다.</p>
+            <span class="service-link">patentwith.com</span>
+          </a>
         </div>
         <div class="products-cta">
-          <a class="button secondary" href="/work/">전체 12개 프로덕트 보기 →</a>
+          <a class="button outline" href="/work/">전체 12개 프로덕트 보기 →</a>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt">
-      <div class="container narrow">
-        <p class="section-kicker">Why Delightflow</p>
-        <h2>우리가 지향하는 방식</h2>
-        <ul class="value-list">
-          <li><strong>실무 중심</strong> — 멋있는 데모보다 실제로 쓰이는 결과물을 만듭니다.</li>
-          <li><strong>속도 중심</strong> — 사람이 오래 걸리던 판단과 준비 과정을 짧게 줄입니다.</li>
-          <li><strong>신뢰 중심</strong> — 전문성이 필요한 영역일수록 더 명확하고 책임 있는 경험을 제공합니다.</li>
-        </ul>
+    <section id="proof" class="section section-alt">
+      <div class="container">
+        <p class="section-kicker">Proof</p>
+        <h2>확인할 수 있는 것만 적었습니다</h2>
+        <p class="section-lead">아래 내용은 각 서비스 사이트에 공개된 정보입니다. 출처 링크에서 직접 확인할 수 있습니다.</p>
+        <div class="grid three">
+          <article class="proof">
+            <p class="proof-big">100<span>건+</span></p>
+            <p>인벤팁스로 완료한 특허 출원</p>
+            <a class="proof-src" href="https://inventips.net/" target="_blank" rel="noopener">출처 · inventips.net</a>
+          </article>
+          <article class="proof">
+            <p class="proof-big">KIPRIS</p>
+            <p>인벤팁스·마크앤서의 검색이 특허청 KIPRIS 데이터에 연결돼 있습니다</p>
+            <a class="proof-src" href="https://inventips.net/why-inventips" target="_blank" rel="noopener">출처 · inventips.net/why-inventips</a>
+          </article>
+          <article class="proof">
+            <p class="proof-big">100<span>% 환불</span></p>
+            <p>마크앤서 상표 출원, 등록 불가 시</p>
+            <a class="proof-src" href="https://marknser.com/" target="_blank" rel="noopener">출처 · marknser.com</a>
+          </article>
+          <article class="proof">
+            <p class="proof-big">변리사</p>
+            <p>대표 전승열 변리사(54기)는 패튼위드 특허법률사무소의 Lead Attorney입니다</p>
+            <a class="proof-src" href="https://www.patentwith.com/" target="_blank" rel="noopener">출처 · patentwith.com</a>
+          </article>
+          <article class="proof">
+            <p class="proof-big">실증</p>
+            <p>인벤팁스 AI실증지원사업 실증 완료</p>
+            <a class="proof-src" href="https://inventips.net/" target="_blank" rel="noopener">출처 · inventips.net</a>
+          </article>
+          <article class="proof">
+            <p class="proof-big">12<span>개</span></p>
+            <p>직접 운영하는 프로덕트 (IP·Legal Tech, AI 인프라, B2C, 크리에이터·커뮤니티)</p>
+            <a class="proof-src" href="/work/">출처 · 프로덕트 페이지</a>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -172,11 +267,12 @@
           <h2>딜라이트플로우와 함께 일하고 싶다면</h2>
           <p>
             제품 협업, 사업 제휴, 서비스 문의가 있다면 아래 이메일로 연락해주세요.
-            현재 사이트는 법인 홈페이지로 전환 중이며, 세부 정보는 계속 업데이트됩니다.
+            특허·상표 출원 상담은 각 서비스에서 바로 시작할 수 있습니다.
           </p>
         </div>
         <div class="contact-actions">
           <a class="button primary" href="mailto:contact@patentwith.com">contact@patentwith.com</a>
+          <a class="button secondary" href="tel:01068356187">010-6835-6187</a>
         </div>
       </div>
     </section>
@@ -209,5 +305,6 @@
       });
     })();
   </script>
+  <script src="js/landing-motion.js" defer></script>
 </body>
 </html>
