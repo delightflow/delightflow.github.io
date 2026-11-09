@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!-- 딜라이트플로우 소개 영상 v2 프레임 소스: render(t) 로 시각 t초의 화면을 결정적으로 그린다 -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 720px; overflow: hidden; background: #05060a; }
+  body { font-family: "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; color: #fff; }
+  #stage { position: relative; width: 1280px; height: 720px; overflow: hidden;
+    background: radial-gradient(120% 90% at 50% 0%, #111a2b 0%, #0d1321 45%, #05060a 100%); }
+  .blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .55; }
+  #b1 { width: 520px; height: 520px; background: #1d4ed8; }
+  #b2 { width: 420px; height: 420px; background: #0ea5e9; opacity: .28; }
+  #grid { position: absolute; inset: -64px 0;
+    background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+    background-size: 64px 64px; }
+  .scene { position: absolute; inset: 0; opacity: 0; }
+  .center { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .kicker { font-size: 18px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #93c5fd; }
+  .word { font-size: 108px; font-weight: 800; letter-spacing: -.04em; line-height: 1; display: flex; }
+  .word span { display: inline-block; }
+  .tag { margin-top: 28px; font-size: 32px; font-weight: 600; color: rgba(255,255,255,.88); letter-spacing: -.02em; }
+  .h2 { font-size: 50px; font-weight: 800; letter-spacing: -.035em; line-height: 1.2; }
+  .sub { margin-top: 18px; font-size: 24px; color: rgba(255,255,255,.72); }
+  #pipe { position: relative; margin-top: 64px; width: 980px; height: 120px; }
+  #pipe svg { position: absolute; inset: 0; }
+  .node { position: absolute; top: 30px; width: 170px; height: 60px; margin-left: -85px; border-radius: 999px;
+    border: 1.5px solid rgba(147,197,253,.6); background: #0d1321;
+    display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700; }
+  /* 서비스 장면 */
+  #svc-index { position: absolute; left: 96px; top: 96px; font-size: 18px; font-weight: 700; letter-spacing: .2em; color: #93c5fd; }
+  #svc-bar { position: absolute; left: 96px; top: 130px; width: 220px; height: 3px; background: rgba(255,255,255,.14); }
+  #svc-bar i { display: block; height: 100%; background: #60a5fa; width: 0; }
+  .card { position: absolute; left: 96px; top: 190px; width: 1088px; height: 420px; border-radius: 32px; padding: 56px 64px;
+    background: linear-gradient(135deg, rgba(255,255,255,.09), rgba(255,255,255,.03));
+    border: 1px solid rgba(255,255,255,.16); box-shadow: 0 40px 100px rgba(0,0,0,.45); opacity: 0; }
+  .card .cat { font-size: 18px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #93c5fd; }
+  .card .name { margin-top: 18px; font-size: 76px; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+  .card .name small { font-size: 34px; font-weight: 600; color: rgba(255,255,255,.6); margin-left: 18px; letter-spacing: -.01em; }
+  .card .desc { margin-top: 30px; font-size: 30px; line-height: 1.45; color: rgba(255,255,255,.88); max-width: 900px; letter-spacing: -.02em; }
+  .card .url { position: absolute; left: 64px; bottom: 52px; font-size: 22px; font-weight: 700; color: #93c5fd; }
+  .card .chip { position: absolute; right: 64px; bottom: 46px; padding: 10px 20px; border-radius: 999px; font-size: 20px; font-weight: 700;
+    background: rgba(37,99,235,.25); border: 1px solid rgba(147,197,253,.4); }
+  .contact { margin-top: 40px; display: flex; gap: 18px; }
+  .pill { padding: 14px 28px; border-radius: 999px; font-size: 24px; font-weight: 700; }
+  .pill.w { background: #fff; color: #0f172a; }
+  .pill.o { border: 1.5px solid rgba(255,255,255,.4); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="b1" class="blob"></div>
+  <div id="b2" class="blob"></div>
+  <div id="grid"></div>
+
+  <!-- 1. 워드마크 -->
+  <section id="s1" class="scene center">
+    <p class="kicker" id="s1k">Delightflow Inc.</p>
+    <div class="word" id="s1w" style="margin-top:22px"></div>
+    <p class="tag" id="s1t">AI로 지식재산과 사업 실행의 마찰을 줄입니다.</p>
+  </section>
+
+  <!-- 2. 문제/비전: 워크플로우 -->
+  <section id="s2" class="scene center">
+    <p class="kicker">Vision</p>
+    <h2 class="h2" style="margin-top:20px">전문성과 속도가 동시에 필요한 일을<br/>더 간결하게.</h2>
+    <div id="pipe">
+      <svg width="980" height="120" viewBox="0 0 980 120"><path id="pipe-line" d="M110 60 H870" stroke="#60a5fa" stroke-width="3" fill="none" stroke-dasharray="760" stroke-dashoffset="760"/></svg>
+      <div class="node" style="left:110px">검색</div>
+      <div class="node" style="left:363px">진단</div>
+      <div class="node" style="left:617px">초안</div>
+      <div class="node" style="left:870px">출원</div>
+    </div>
+  </section>
+
+  <!-- 3. 서비스 -->
+  <section id="s3" class="scene">
+    <p id="svc-index">Our services · 01 / 04</p>
+    <div id="svc-bar"><i></i></div>
+    <article class="card">
+      <p class="cat">AI 특허 업무 플랫폼</p>
+      <p class="name">인벤팁스<small>InventIPS</small></p>
+      <p class="desc">선행조사·명세서·OA 대응·상표 검토는 AI 에이전트가 맡고,<br/>변리사는 결과를 검토하고 서명합니다.</p>
+      <p class="url">inventips.net</p><span class="chip">KIPRIS 연동</span>
+    </article>
+    <article class="card">
+      <p class="cat">AI 상표 검색 · 출원</p>
+      <p class="name">마크앤서<small>Marknser</small></p>
+      <p class="desc">브랜드명을 입력하면 KIPRIS 데이터로 유사상표를 AI 검색하고,<br/>변리사가 등록 가능성과 출원 전략을 검토합니다.</p>
+      <p class="url">marknser.com</p><span class="chip">출원 전 검토 후 불가 시 전액 환불</span>
+    </article>
+    <article class="card">
+      <p class="cat">발명 특허 AI 에이전트</p>
+      <p class="name">넥스트IP<small>NextIP</small></p>
+      <p class="desc">아이디어부터 특허출원까지 한 번에.<br/>AI가 분석·초안을 만들고 변리사가 최종 검토합니다.</p>
+      <p class="url">nextip.ai</p><span class="chip">Idea → Filing</span>
+    </article>
+    <article class="card">
+      <p class="cat">특허법률사무소</p>
+      <p class="name">패튼위드<small>PatentWith</small></p>
+      <p class="desc">특허·상표·디자인·분쟁 대응까지.<br/>변리사가 직접 1:1로 응대하는 지식재산 파트너입니다.</p>
+      <p class="url">patentwith.com</p><span class="chip">변리사 직접 응대</span>
+    </article>
+  </section>
+
+  <!-- 4. 마무리 -->
+  <section id="s4" class="scene center">
+    <h2 class="h2" id="s4h">AI가 처리하고,<br/>변리사가 책임집니다.</h2>
+    <p class="sub" id="s4s">딜라이트플로우 — 지식재산을 중심으로, 실행의 전 영역에.</p>
+    <div class="contact" id="s4c"><span class="pill w">delightflow.github.io</span><span class="pill o">contact@patentwith.com</span></div>
+  </section>
+</div>
+
+<script>
+  var DURATION = 30;
+  var $ = function (s) { return document.querySelector(s); };
+  var clamp = function (v, a, b) { return Math.min(b, Math.max(a, v)); };
+  var prog = function (t, a, b) { return clamp((t - a) / (b - a), 0, 1); };
+  var easeOut = function (x) { return 1 - Math.pow(1 - x, 3); };
+  var easeInOut = function (x) { return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+  // 장면 a~b 구간의 투명도(앞뒤 fade 길이 f)
+  var vis = function (t, a, b, f) { return Math.min(easeOut(prog(t, a, a + f)), 1 - easeInOut(prog(t, b - f, b))); };
+
+  var word = 'Delightflow';
+  var w = $('#s1w');
+  word.split('').forEach(function (c) { var s = document.createElement('span'); s.textContent = c; w.appendChild(s); });
+  var letters = w.querySelectorAll('span');
+  var nodes = document.querySelectorAll('.node');
+  var cards = document.querySelectorAll('.card');
+
+  function render(t) {
+    // 배경: 천천히 떠도는 블롭
+    $('#b1').style.transform = 'translate(' + (380 + Math.sin(t * .35) * 260) + 'px,' + (-120 + Math.cos(t * .27) * 120) + 'px)';
+    $('#b2').style.transform = 'translate(' + (120 + Math.cos(t * .22) * 200) + 'px,' + (380 + Math.sin(t * .31) * 90) + 'px)';
+    $('#grid').style.transform = 'translateY(' + (-(t * 8) % 64) + 'px)';
+
+    // 1. 0~5.2s
+    var s1 = vis(t, 0, 5.2, .6);
+    $('#s1').style.opacity = s1;
+    $('#s1k').style.opacity = easeOut(prog(t, .2, .9));
+    letters.forEach(function (el, i) {
+      var p = easeOut(prog(t, .3 + i * .06, 1.1 + i * .06));
+      el.style.opacity = p;
+      el.style.transform = 'translateY(' + (60 * (1 - p)) + 'px)';
+    });
+    var tp = easeOut(prog(t, 1.6, 2.5));
+    $('#s1t').style.opacity = tp;
+    $('#s1t').style.transform = 'translateY(' + (20 * (1 - tp)) + 'px)';
+    $('#s1').style.transform = 'scale(' + (1 + prog(t, 3.5, 5.2) * .06) + ')';
+
+    // 2. 5~10.4s
+    $('#s2').style.opacity = vis(t, 5, 10.4, .6);
+    var lp = easeInOut(prog(t, 6, 9));
+    $('#pipe-line').setAttribute('stroke-dashoffset', 760 * (1 - lp));
+    nodes.forEach(function (n, i) {
+      var p = easeOut(prog(t, 5.8 + i * 1, 6.4 + i * 1));
+      n.style.opacity = .25 + .75 * p;
+      n.style.transform = 'scale(' + (.9 + .1 * p) + ')';
+      n.style.borderColor = p > .99 ? '#93c5fd' : 'rgba(147,197,253,.35)';
+      n.style.background = p > .99 ? '#16357f' : '#0d1321';
+    });
+
+    // 3. 10.2~24.4s, 카드당 3.5s
+    $('#s3').style.opacity = vis(t, 10.2, 24.4, .5);
+    var start = 10.4, dur = 3.5;
+    var idx = clamp(Math.floor((t - start) / dur), 0, 3);
+    $('#svc-index').textContent = 'Our services · 0' + (idx + 1) + ' / 04';
+    $('#svc-bar i').style.width = (prog(t, start, start + dur * 4) * 100) + '%';
+    cards.forEach(function (c, i) {
+      var a = start + i * dur, b = a + dur;
+      var pin = easeOut(prog(t, a, a + .6));
+      var pout = easeInOut(prog(t, b - .4, b));
+      if (i === 3) pout = 0;
+      c.style.opacity = Math.min(pin, 1 - pout);
+      c.style.transform = 'translateX(' + (80 * (1 - pin) - 80 * pout) + 'px) rotate(' + (-1.2 * (1 - pin)) + 'deg)';
+    });
+
+    // 4. 24.2~30s
+    $('#s4').style.opacity = vis(t, 24.2, 30.6, .6);
+    var hp = easeOut(prog(t, 24.4, 25.4));
+    $('#s4h').style.transform = 'translateY(' + (30 * (1 - hp)) + 'px)';
+    $('#s4s').style.opacity = easeOut(prog(t, 25.6, 26.4));
+    var cp = easeOut(prog(t, 26.4, 27.2));
+    $('#s4c').style.opacity = cp;
+    $('#s4c').style.transform = 'translateY(' + (16 * (1 - cp)) + 'px)';
+  }
+  window.render = render;
+  window.DURATION = DURATION;
+  // 미리보기: ?t=12 로 특정 시각, 없으면 실시간 재생
+  var q = new URLSearchParams(location.search);
+  if (q.has('t')) render(parseFloat(q.get('t')));
+  else if (!q.has('capture')) { var t0 = performance.now(); (function loop(now) { render(((now - t0) / 1000) % DURATION); requestAnimationFrame(loop); })(t0); }
+  else render(0);
+</script>
+</body>
+</html>
